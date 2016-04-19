@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>AngularJS OMDb test</title>
+  <script src="http://www.gitbook.net/js/angular.min.js"></script>
+  <script src="omdb.js"></script>
+</head>
+
+
+<body>
+
+  <!--第一次新增註解(for git)-->
+  <!--第二次新增註解(for git)-->
+  <div ng-app="app" ng-controller="SearchCtrl">
+
+    <p><h2>By Title</h2></p>
+
+    Title:<input type="text" ng-model="t"> year: <input name="y" type="text" ng-model="y"> Plot: <select ng-model="plot">
+        <option value="short">Short</option>
+        <option value="full">Full</option>  
+    </select> Response: <select ng-model="r">
+        <option value="json">JSON</option>
+        <option value="xml">XML</option>
+    </select>
+
+    <button ng-click="search()">Search</button><br><br><br>
+
+    <div ng-show="sw">
+      <h2>{{result.Title}}({{result.Year}})</h2></div>
+
+    <div ng-show="sw">{{result.Rated}}||{{result.Runtime}}||{{result.Released}}<br><br></div>
+
+
+    <div ng-show="sw">
+      <h3>Director:</h3> {{result.Director}}</div>
+
+    <div ng-show="sw">
+      <h3>Writers:</h3> {{result.Writer}}</div>
+
+    <div ng-show="sw">
+      <h3>Stars:</h3> {{result.Actors}}<br><br></div>
+
+    <div ng-show="sw">
+      <h3>Plot:</h3>{{result.Plot}}<br><br></div>
+
+    <img data-ng-srcset="{{result.Poster}}"></img>
+
+  </div>
+</body>
+
+</html>
