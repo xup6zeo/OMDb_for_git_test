@@ -14,7 +14,9 @@
   <!--第二次新增註解(for git)-->
   <div ng-app="app" ng-controller="SearchCtrl">
 
-    <p><h2>By Title</h2></p>
+    <p>
+      <h2>By Title</h2>
+    </p>
 
     Title:<input type="text" ng-model="t"> year: <input name="y" type="text" ng-model="y"> Plot: <select ng-model="plot">
         <option value="short">Short</option>
@@ -27,7 +29,8 @@
     <button ng-click="search()">Search</button><br><br><br>
 
     <div ng-show="sw">
-      <h2>{{result.Title}}({{result.Year}})</h2></div>
+      <h2>{{result.Title}}({{result.Year}})</h2>
+    </div>
 
     <div ng-show="sw">{{result.Rated}}||{{result.Runtime}}||{{result.Released}}<br><br></div>
 
